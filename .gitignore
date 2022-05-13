@@ -1,0 +1,5 @@
+api-server/node_modules
+comment-service/node_modules
+post-service/node_modules
+service-registry/node_modules
+.DS_Store
