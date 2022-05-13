@@ -39,7 +39,13 @@ class ServiceRegistry {
             });
 
             return key;
-        }
+        } else {
+            this.services[key].timestamp = Math.floor(new Date() / 1000);
+            logger({
+                type: LOG_TYPES.LOG.type,
+                message: `Updated Service: ${key}`
+            });
+        };
     };
 
     deregister(name, version, ip, port) {

@@ -75,7 +75,7 @@ const server = app.listen(0, async () => {
 app.disable('x-powered-by');
 
 // Middleware
-if (ENV === ENVIRONMENTS.DEVELOPMENT) {
+if (ENV === ENVIRONMENTS.DEV) {
     app.use(require('morgan')('dev'));
 }
 app.use(express.json());
