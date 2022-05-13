@@ -120,3 +120,5 @@ router.delete('/comment/:id', async (req, res) => {
         });
     }
 });
+
+module.exports = router;
