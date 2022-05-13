@@ -15,7 +15,7 @@ router.get('/posts', async (req, res) => {
     try {
         const posts = await postService.getPosts();
 
-        res.send({ posts });
+        res.send(posts);
     } catch(e) {
         logger({
             type: LOG_TYPES.ERROR.type,
@@ -37,7 +37,7 @@ router.get('/post/:id', async (req, res) => {
 
         post.comments = comments;
 
-        res.send({ post });
+        res.send(post);
     } catch(e) {
         logger({
             type: LOG_TYPES.ERROR.type,
@@ -70,7 +70,7 @@ router.post('/post', async (req, res) => {
 // Create a comment
 router.post('/comment', async (req, res) => {
     try {
-        const result = await commentService(req.body);
+        const result = await commentService.createComment(req.body);
         res.send(result);
     } catch(e) {
         logger({

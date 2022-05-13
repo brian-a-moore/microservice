@@ -54,7 +54,7 @@ class CommentService {
 
     async getService(serviceName) {
         const res = await axios.get(`${this.serviceRegistryUrl}/retrieve/${serviceName}/${this.serviceVersion}`);
-        return res.data;
+        return res.data.result.service;
     }
 
     async callService(opts) {

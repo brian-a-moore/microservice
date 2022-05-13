@@ -11,7 +11,7 @@ router.get('/comments/:postId', async (req, res) => {
         const postId = req.params.postId;
         const comments = await commentService.getAll(postId);
         
-        res.send({ comments });
+        res.send(comments);
     } catch(e) {
         logger({
             type: LOG_TYPES.ERROR.type,
@@ -31,7 +31,7 @@ router.post('/comment', async (req, res) => {
 
         res.send({
             id,
-            message: 'Post created!'
+            message: 'Comment created!'
         });
     } catch(e) {
         logger({
@@ -50,7 +50,7 @@ router.delete('/comment/:id', async (req, res) => {
         await commentService.delete(id);
 
         res.send({
-            message: 'Post deleted'
+            message: 'Comment deleted'
         });
     } catch(e) {
         logger({
@@ -69,7 +69,7 @@ router.delete('/comments/:postId', async (req, res) => {
         await commentService.deleteAll(postId);
 
         res.send({
-            message: 'Post deleted'
+            message: 'Comments deleted'
         });
     } catch(e) {
         logger({

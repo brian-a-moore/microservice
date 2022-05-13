@@ -4,13 +4,11 @@ class PostService {
     }
 
     getAll() {
-        const posts = this.posts;
-        return posts;
+        return this.posts;
     };
 
     getById(id) {
-        const post = posts.find(post => post.id === id);
-        return post;
+        return this.posts.find(post => post.id === id);
     };
 
     create(title, body, name) {

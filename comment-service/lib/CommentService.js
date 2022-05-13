@@ -4,8 +4,7 @@ class CommentService {
     }
 
     getAll(postId) {
-        const comments = this.comments.filter(comment => comment.postId === postId);
-        return comments;
+        return this.comments.filter(comment => comment.postId === postId);
     };
 
     create(comment, name, postId) {
