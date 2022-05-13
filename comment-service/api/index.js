@@ -63,5 +63,24 @@ router.delete('/comment/:id', async (req, res) => {
         });
     }
 });
+router.delete('/comments/:postId', async (req, res) => {
+    try {
+        const postId = req.params.postId;
+        await commentService.deleteAll(postId);
+
+        res.send({
+            message: 'Post deleted'
+        });
+    } catch(e) {
+        logger({
+            type: LOG_TYPES.ERROR.type,
+            message: e.message
+        });
+
+        res.status(STATUS_CODES.ERROR).send({
+            message: e.message
+        });
+    }
+});
 
 module.exports = router;
