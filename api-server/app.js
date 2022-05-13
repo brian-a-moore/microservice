@@ -27,6 +27,7 @@ app.disable('x-powered-by');
 if (ENV === ENVIRONMENTS.DEVELOPMENT) {
     app.use(require('morgan')('dev'));
 }
+app.use(express.json());
 app.use(cors());
 
 // Routes

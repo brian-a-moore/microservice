@@ -79,6 +79,7 @@ if (ENV === ENVIRONMENTS.DEVELOPMENT) {
     app.use(require('morgan')('dev'));
 }
 app.use(cors());
+app.use(express.json());
 
 // Routes
 app.use('/', require('./api'));

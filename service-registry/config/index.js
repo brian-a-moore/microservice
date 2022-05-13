@@ -5,6 +5,6 @@ module.exports = {
     development: {
         name,
         version,
-        timeout: 30
+        timeout: 60
     }
 };
