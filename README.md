@@ -10,3 +10,4 @@ FUTURE PLANS:
 - Add some route schema validation with joi
 - Add some caching with Redis
 - Add a PostgreSQL or MongoDB backend to store the services data
+- Add swagger OpenAPI specs
